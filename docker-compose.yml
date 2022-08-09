@@ -1,24 +1,24 @@
 services:
-  db_postgres_students:
+  db_postgres_didi_students:
     image: postgres
-    container-name: db_postgres_didi-students
+    container_name: db_postgres_didi_students
     restart: always
     ports:
       - 1234:5432
-    env-file:
+    env_file:
       - .env
     volumes:
-      - pg_didi-students: /var/lib/postgresql/data
+      - pg_didi_students: /var/lib/postgresql/data
 
-  node_app_didi-students:
-    container-name: node_app_didi-students
+  node_app_didi_students:
+    container_name: node_app_didi_students
     build: .
     ports:
       - 5000:5000
     depends_on:
-      - db_postgres_didi-students
+      - db_postgres_didi_students
     env_file:
       - .env
 
 volumes:
-  pg_didi-students:
+  pg_didi_students:

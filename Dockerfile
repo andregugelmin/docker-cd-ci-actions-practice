@@ -1,4 +1,4 @@
-From node
+FROM node
 
 WORKDIR /usr/src/
 
@@ -6,6 +6,6 @@ COPY . .
 
 EXPOSE 5000
 
-Run npm i
+RUN npm i && npm run build && npx prisma generate
 
 CMD ["node", "server.js"]
