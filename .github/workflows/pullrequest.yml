@@ -1,5 +1,5 @@
 name: Pull Request
-on: [pull_requests]
+on: [pull_request]
 jobs:
   PullRequest:
     runs-on: ubuntu-latest
